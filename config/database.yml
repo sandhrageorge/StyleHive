@@ -22,7 +22,12 @@ default: &default
 
 development:
   <<: *default
-  database: style_hive_development
+  adapter: postgresql
+  database: style_hive_dev
+  username: sandhra
+  password: sandhra
+  host: <%= ENV['PG_ADDR'] %>
+  port: <%= ENV['PG_PORT'] %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
